@@ -18,14 +18,14 @@ public class Day1 {
     }
 
     public static int concatenateFirstAndLastDigit(String input) {
-        return Integer.valueOf(input.substring(0, 1) + input.substring(input.length() - 1, input.length()));
+        return Integer.parseInt(input.charAt(0) + input.substring(input.length() - 1));
     }
 
     public static int sumCalibrations(List<Integer> calibrations) {
-        return calibrations.stream().reduce(0, (a,b)-> (a+b));
+        return calibrations.stream().reduce(0, Integer::sum);
     }
 
-    public static int completeChallenge(List<String> input) {
+    public static int completeChallengePart1(List<String> input) {
         List<Integer> allIntegers = new ArrayList<>();
         for (String line : input) {
             String filterDigits = filterDigits(line);

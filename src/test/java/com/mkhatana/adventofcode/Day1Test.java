@@ -36,17 +36,17 @@ class Day1Test {
     @Test
     void completesFirstPartChallenge() {
         Assertions.assertEquals(142,
-                Day1.completeChallenge(List.of("1abc2", "pqr3stu8vwx", "a1b2c3d4e5f", "treb7uchet")));
+                Day1.completeChallengePart1(List.of("1abc2", "pqr3stu8vwx", "a1b2c3d4e5f", "treb7uchet")));
     }
 
     @Test
     void outputsFirstPartChallengeTestResultFromInput() throws Exception {
-        Assertions.assertEquals(55017, Day1.completeChallenge(getInput()));
+        Assertions.assertEquals(55017, Day1.completeChallengePart1(getInput()));
     }
 
     List<String> getInput() throws IOException {
 
-        ArrayList<String> list = new ArrayList<String>();
+        ArrayList<String> list = new ArrayList<>();
         try (Stream<String> stream = Files.lines(Paths.get(Objects.requireNonNull(this.getClass()
                 .getClassLoader()
                 .getResource("Day1.input.txt")).getPath()))) {
